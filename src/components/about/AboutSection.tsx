@@ -120,47 +120,50 @@ export function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 relative rounded-[36px] overflow-hidden border border-white/15 bg-gradient-to-b from-[#141418] to-[#0a0a0d] shadow-[0_30px_70px_rgba(0,0,0,0.9)] p-7 flex flex-col justify-between min-h-[520px] group"
+            className="lg:col-span-5 relative rounded-[28px] sm:rounded-[36px] overflow-hidden border border-white/15 bg-gradient-to-b from-[#141418] to-[#0a0a0d] shadow-[0_30px_70px_rgba(0,0,0,0.9)] p-4 sm:p-6 flex flex-col justify-between min-h-[580px] sm:min-h-[620px] group"
           >
-            {/* Background Portrait Photo */}
+            {/* Background Portrait Photo - Pristine studio session without chevrons */}
             <img
-              src="/Addisu_Legesse_Website_Asset_Pack/02-about-artist/addisu-amber-profile-portrait.jpg"
-              alt="Addisu Legesse Portrait"
-              className="absolute inset-0 h-full w-full object-cover filter brightness-[0.8] contrast-[1.1] group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="/hero-background.png"
+              alt="Addisu Legesse Studio Session"
+              className="absolute inset-0 h-full w-full object-cover object-[62%_15%] sm:object-[60%_25%] filter brightness-[0.88] contrast-[1.08] group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            {/* Vignette Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/30 pointer-events-none" />
+            {/* Smooth Atmospheric Bottom Vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030304] via-[#030304]/75 via-45% to-black/30 pointer-events-none" />
 
             {/* Top Telemetry Stamp */}
             <div className="relative z-10 flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 font-mono text-[10px] uppercase tracking-wider text-[#E5A842]">
-                ARTIST PROFILE • ADDIS ABABA
-              </span>
-              <span className="font-mono text-[10px] text-neutral-300">
-                ETHIOPIA
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E5A842] animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-wider text-[#E5A842]">
+                  ARTIST PROFILE
+                </span>
+              </div>
+              <span className="font-mono text-[10px] text-neutral-300 tracking-wider uppercase">
+                ADDIS ABABA, ETHIOPIA
               </span>
             </div>
 
-            {/* Bottom Card: Sound Bite */}
-            <div className="relative z-10 p-5 rounded-2xl bg-black/85 backdrop-blur-xl border border-white/15 shadow-2xl mt-auto">
+            {/* Bottom Card: Sound Bite & Philosophy */}
+            <div className="relative z-10 p-4 sm:p-5 rounded-2xl bg-black/65 backdrop-blur-xl border border-white/12 shadow-[0_15px_35px_rgba(0,0,0,0.7)] mt-auto">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5A842]">
                   ARTISTIC PHILOSOPHY
                 </span>
-                <span className="text-xs font-mono text-neutral-400">
+                <span className="text-[11px] font-mono text-neutral-400">
                   Addis Ababa
                 </span>
               </div>
-              <p className="font-serif italic text-lg sm:text-xl text-neutral-200 leading-snug">
+              <p className="font-serif italic text-base sm:text-lg text-neutral-100 leading-snug">
                 &ldquo;Music is about heartfelt storytelling and genuine emotion. It brings the timeless melodies of our heritage forward into the modern world.&rdquo;
               </p>
-              <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-neutral-400 font-sans font-medium">
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between gap-2">
+                <span className="text-[11px] sm:text-xs text-neutral-400 font-sans font-medium truncate">
                   Addis Legesse Management
                 </span>
                 <button
                   onClick={() => playTrack(OFFICIAL_TRACKS[0])}
-                  className="flex items-center gap-1.5 text-xs text-[#E5A842] hover:text-white transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E5A842]/10 hover:bg-[#E5A842] text-[#E5A842] hover:text-black border border-[#E5A842]/30 text-xs font-sans font-medium transition-all active:scale-95 shrink-0 cursor-pointer"
                 >
                   <Play className="h-3 w-3 fill-current" />
                   <span>Stream Ewedshalew</span>
